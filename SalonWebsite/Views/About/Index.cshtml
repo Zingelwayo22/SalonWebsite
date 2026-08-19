@@ -1,0 +1,62 @@
+﻿@model IEnumerable<SalonWebsite.Models.About>
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+        <h4>No About section has been created yet.</h4>
+
+        @Html.ActionLink(
+            "Create About",
+            "Create",
+            null,
+            new { @class = "btn btn-warning mt-3" })
+    </div>
+}
+else
+{
+    // Display the existing About record here
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.AboutId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.AboutId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.AboutId })
+            </td>
+        </tr>
+    }
+
+</table>

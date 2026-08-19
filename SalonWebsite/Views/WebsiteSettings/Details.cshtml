@@ -1,0 +1,66 @@
+﻿@model SalonWebsite.Models.WebsiteSettings
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>WebsiteSettings</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SalonName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SalonName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tagline)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tagline)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HeroHeading)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HeroHeading)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HeroDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HeroDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Logo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Logo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HeroImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HeroImage)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.WebsiteSettingsId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

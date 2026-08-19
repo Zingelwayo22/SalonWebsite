@@ -1,0 +1,64 @@
+﻿@model IEnumerable<SalonWebsite.Models.WebsiteSettings>
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SalonName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tagline)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HeroHeading)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HeroDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Logo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HeroImage)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalonName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tagline)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HeroHeading)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HeroDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Logo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HeroImage)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.WebsiteSettingsId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.WebsiteSettingsId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.WebsiteSettingsId })
+            </td>
+        </tr>
+    }
+
+</table>

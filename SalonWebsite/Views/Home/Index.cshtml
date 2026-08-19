@@ -1,0 +1,538 @@
+﻿@model SalonWebsite.ViewModels.HomeViewModel
+
+@{
+    ViewBag.Title = "Home";
+}
+
+<!-- ================= HERO SECTION ================= -->
+
+<section class="hero">
+
+    <div class="hero-overlay">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-7">
+
+                    <div class="hero-content">
+
+                        @if (Model.WebsiteSettings != null)
+                        {
+                            <h1>@Model.WebsiteSettings.HeroHeading</h1>
+
+                            <p>
+                                @Model.WebsiteSettings.HeroDescription
+                            </p>
+                        }
+                        else
+                        {
+                            <h1>Welcome to Our Salon</h1>
+
+                            <p>
+                                Please configure your website settings.
+                            </p>
+                        }
+
+                        <a href="#services" class="btn btn-warning btn-lg me-3">
+                            Our Services
+                        </a>
+
+                        <a href="#contact" class="btn btn-outline-light btn-lg">
+                            Contact Us
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="py-5">
+
+    <div class="container">
+
+        @if (Model.About != null)
+        {
+            <div class="row align-items-center">
+
+                <div class="col-md-6">
+
+                    @if (!string.IsNullOrEmpty(Model.About.Image))
+                    {
+                        <img src="@Url.Content(Model.About.Image)"
+                             class="img-fluid rounded shadow" />
+                    }
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <h2>@Model.About.Title</h2>
+
+                    <p class="lead">
+                        @Model.About.Description
+                    </p>
+
+                </div>
+
+            </div>
+        }
+        else
+        {
+            <div class="text-center">
+
+                <h2>About Us</h2>
+
+                <p>No About information has been added yet.</p>
+
+            </div>
+        }
+
+    </div>
+
+</section>
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services" class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2>Our Services</h2>
+
+            <p>Professional beauty services tailored for you.</p>
+
+        </div>
+
+        <div class="row">
+
+            @if (Model.Services != null && Model.Services.Any())
+            {
+                foreach (var service in Model.Services)
+                {
+                    <div class="col-md-4 mb-4">
+
+                        <div class="card h-100 shadow">
+
+                            @if (!string.IsNullOrEmpty(service.Image))
+                            {
+                                <img src="@Url.Content(service.Image)"
+                                     class="card-img-top"
+                                     style="height:250px;object-fit:cover;" />
+                            }
+
+                            <div class="card-body">
+
+                                <h4>@service.Name</h4>
+
+                                <p>@service.Description</p>
+
+                                <h5 class="text-warning">
+                                    R @service.Price
+                                </h5>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="col-12 text-center">
+
+                    <h4>No services available yet.</h4>
+
+                </div>
+            }
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= WHY CHOOSE US ================= -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h6 class="text-warning text-uppercase fw-bold">
+                Why Choose Us
+            </h6>
+
+            <h2 class="fw-bold">
+                Experience Beauty Like Never Before
+            </h2>
+
+        </div>
+
+        <div class="row text-center">
+
+            <div class="col-md-3 mb-4">
+
+                <div class="p-4">
+
+                    <h1>⭐</h1>
+
+                    <h5>Experienced Team</h5>
+
+                    <p>
+                        Qualified professionals with years of experience.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3 mb-4">
+
+                <div class="p-4">
+
+                    <h1>🌸</h1>
+
+                    <h5>Premium Products</h5>
+
+                    <p>
+                        We only use trusted, high-quality beauty products.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3 mb-4">
+
+                <div class="p-4">
+
+                    <h1>😊</h1>
+
+                    <h5>Friendly Service</h5>
+
+                    <p>
+                        Every client is welcomed with warmth and care.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3 mb-4">
+
+                <div class="p-4">
+
+                    <h1>💖</h1>
+
+                    <h5>Affordable Pricing</h5>
+
+                    <p>
+                        Luxury beauty services at competitive prices.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="stats-section">
+
+    <div class="container">
+
+        <div class="row text-center">
+
+            <div class="col-md-3">
+
+                <h1>15+</h1>
+
+                <p>Years Experience</p>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <h1>8K+</h1>
+
+                <p>Happy Clients</p>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <h1>25+</h1>
+
+                <p>Beauty Services</p>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <h1>100%</h1>
+
+                <p>Customer Satisfaction</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery" class="py-5 bg-light">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2>Our Gallery</h2>
+
+            <p>Take a look at some of our work.</p>
+
+        </div>
+
+        <div class="row">
+
+            @if (Model.Galleries.Any())
+            {
+                foreach (var item in Model.Galleries)
+                {
+                    <div class="col-lg-4 col-md-6 mb-4">
+
+                        <div class="card shadow border-0">
+
+                            <img src="@Url.Content(item.Image)"
+                                 class="card-img-top"
+                                 style="height:260px;object-fit:cover;" />
+
+                            <div class="card-body">
+
+                                <h5>@item.Title</h5>
+
+                                <p class="text-muted">
+                                    @item.Description
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="col-12 text-center">
+
+                    <h4>No gallery images yet.</h4>
+
+                </div>
+            }
+
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- Gallery continues in Part 3 -->
+        <div class="row">
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <img src="~/Content/images/gallery1.jpg"
+                     class="img-fluid gallery-image shadow"
+                     alt="Gallery Image 1" />
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <img src="~/Content/images/gallery2.jpg"
+                     class="img-fluid gallery-image shadow"
+                     alt="Gallery Image 2" />
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <img src="~/Content/images/gallery3.jpg"
+                     class="img-fluid gallery-image shadow"
+                     alt="Gallery Image 3" />
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= OPENING HOURS ================= -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h6 class="text-warning text-uppercase fw-bold">
+                Opening Hours
+            </h6>
+
+            <h2 class="fw-bold">
+                We're Ready To Welcome You
+            </h2>
+
+        </div>
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-6">
+
+                <table class="table table-bordered text-center shadow">
+
+                    <tbody>
+
+                        <tr>
+                            <td>Monday</td>
+                            <td>08:00 - 18:00</td>
+                        </tr>
+
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>08:00 - 18:00</td>
+                        </tr>
+
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>08:00 - 18:00</td>
+                        </tr>
+
+                        <tr>
+                            <td>Thursday</td>
+                            <td>08:00 - 18:00</td>
+                        </tr>
+
+                        <tr>
+                            <td>Friday</td>
+                            <td>08:00 - 18:00</td>
+                        </tr>
+
+                        <tr>
+                            <td>Saturday</td>
+                            <td>08:00 - 15:00</td>
+                        </tr>
+
+                        <tr>
+                            <td>Sunday</td>
+                            <td>Closed</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact" class="py-5 bg-dark text-white">
+
+    <div class="container">
+
+        <h2 class="text-center mb-5">Contact Us</h2>
+
+        @if (Model.Contact != null)
+        {
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <h4>@Model.Contact.SalonName</h4>
+
+                    <p>
+                        <strong>Phone:</strong> @Model.Contact.Phone
+                    </p>
+
+                    <p>
+                        <strong>Email:</strong> @Model.Contact.Email
+                    </p>
+
+                    <p>
+                        <strong>Address:</strong> @Model.Contact.Address
+                    </p>
+
+                    <p>
+                        <strong>Hours:</strong> @Model.Contact.OpeningHours
+                    </p>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <h5>Follow Us</h5>
+
+                    @if (!string.IsNullOrWhiteSpace(Model.Contact.Facebook))
+                    {
+                        <p>
+                            <a href="@Model.Contact.Facebook" target="_blank" class="text-white">
+                                Facebook
+                            </a>
+                        </p>
+                    }
+
+                    @if (!string.IsNullOrWhiteSpace(Model.Contact.Instagram))
+                    {
+                        <p>
+                            <a href="@Model.Contact.Instagram" target="_blank" class="text-white">
+                                Instagram
+                            </a>
+                        </p>
+                    }
+
+                    @if (!string.IsNullOrWhiteSpace(Model.Contact.TikTok))
+                    {
+                        <p>
+                            <a href="@Model.Contact.TikTok" target="_blank" class="text-white">
+                                TikTok
+                            </a>
+                        </p>
+                    }
+
+                </div>
+
+            </div>
+        }
+        else
+        {
+            <div class="text-center">
+                <h4>No contact information available.</h4>
+            </div>
+        }
+
+    </div>
+
+</section>

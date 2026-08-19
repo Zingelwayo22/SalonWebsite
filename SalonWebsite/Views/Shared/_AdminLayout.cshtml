@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1" />
+
+    <title>@ViewBag.Title - Salon CMS</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css"
+          rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link href="~/Content/Site.css"
+          rel="stylesheet" />
+
+</head>
+
+<body class="admin-body">
+
+    <!-- ADMIN NAVIGATION -->
+
+    <nav class="admin-navbar">
+
+        <div class="admin-nav-container">
+
+            <a class="admin-brand"
+               href="@Url.Action("Index", "Admin")">
+
+                ✂ Salon CMS
+
+            </a>
+
+
+            <div class="admin-nav-links">
+
+                <a href="@Url.Action("Index", "Admin")">
+                    <i class="bi bi-speedometer2"></i>
+                    Dashboard
+                </a>
+
+                <a href="@Url.Action("Index", "About")">
+                    <i class="bi bi-file-text"></i>
+                    About
+                </a>
+
+                <a href="@Url.Action("Index", "Services")">
+                    <i class="bi bi-scissors"></i>
+                    Services
+                </a>
+
+                <a href="@Url.Action("Index", "Gallery")">
+                    <i class="bi bi-images"></i>
+                    Gallery
+                </a>
+
+                <a href="@Url.Action("Index", "Contact")">
+                    <i class="bi bi-telephone"></i>
+                    Contact
+                </a>
+
+                <a class="logout-link"
+                   href="@Url.Action("Logout", "Account")">
+
+                    <i class="bi bi-box-arrow-right"></i>
+                    Logout
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- PAGE CONTENT -->
+
+    <main class="admin-content">
+
+        @RenderBody()
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
