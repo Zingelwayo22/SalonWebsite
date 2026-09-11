@@ -1,557 +1,683 @@
-.Salon Website & Management System(Landing page)
+# Salon Landing Page & Management System
 
-svg
+A professional salon website and content management system built using **ASP.NET MVC 5**, **Entity Framework 6**, and **SQL Server**.
 
-A modern and responsive salon website built using ASP.NET MVC 5, C#, Entity Framework, and SQL Server. The application provides a professional online presence for a salon while allowing salon staff to manage website content such as services, information, and images.
+The project provides a modern public-facing salon website while allowing an administrator to manage the salon's content, including services, gallery images, about information, and customer contact enquiries.
 
-The project was developed as part of my software development portfolio to demonstrate my ability to design, develop, and manage a full-stack web application using Microsoft's .NET framework.
+---
 
-Project Overview
+## 📌 Project Overview
 
-svg
+The **Salon Landing Page & Management System** was developed as a portfolio project to demonstrate practical skills in **web application development, database management, authentication, CRUD operations, and responsive user interface design**.
 
-The Salon Website is designed to provide customers with an attractive and informative online experience while giving salon administrators the ability to manage important website content.
+The application has two main areas:
 
-The website allows customers to view information about the salon, browse available services, and find contact information.
+### 🌐 Public Website
 
-An administrative side of the system allows authorized users to manage content without needing to modify the source code directly.
+Visitors can access the salon website without logging in and view:
 
-Project Objectives
+* Salon information
+* About section
+* Services offered
+* Gallery
+* Contact information
+* Contact/enquiry form
+* Salon location and other relevant information
 
-svg
+### 🔐 Administration Area
 
-The main objectives of this project were to:
+Authorized administrators can log in and manage the content displayed on the website.
 
-Build a professional salon website.
-Create a responsive and user-friendly interface.
-Allow salon administrators to manage website content.
-Store salon information and services in a database.
-Implement CRUD functionality using Entity Framework.
-Follow the MVC software architecture.
-Practice connecting a web application to SQL Server.
-Develop a project suitable for a professional software development portfolio.
-Features
+Administrators can:
 
-svg
+* Log in securely
+* Access an administration dashboard
+* Manage salon information
+* Add, edit, and delete services
+* Manage gallery content
+* View customer enquiries
+* Update website content
+* Log out securely
 
-Home Page
+---
 
-svg
+# ✨ Features
 
-The home page provides visitors with an overview of the salon and highlights important information.
+## 🏠 Public Landing Page
 
-Features include:
+The landing page provides visitors with an attractive introduction to the salon.
 
-Salon introduction
-Featured services
-Professional presentation
-Navigation to other sections of the website
-Responsive layout
-Services
+It includes sections such as:
 
-svg
+* Hero section
+* About the salon
+* Services
+* Gallery
+* Contact section
+* Call-to-action areas
 
-Customers can view the services offered by the salon.
+The website is designed to provide visitors with the information they need before contacting or visiting the salon.
+
+---
+
+## 💇 Services Management
+
+The administrator can manage the services displayed on the website.
+
+### Admin capabilities
+
+* Add a new service
+* View existing services
+* Edit service information
+* Delete services
 
 Each service can contain information such as:
 
-Service name
-Description
-Price
-Service image
-Other relevant information
+* Service name
+* Description
+* Price
+* Other relevant details
 
-Administrators can add, edit, and delete services through the management functionality.
+Changes made through the administration area are reflected on the public website.
 
+---
+
+## 🖼️ Gallery Management
+
+The gallery allows the salon to showcase its work and environment.
+
+Administrators can manage gallery content through the administration section.
+
+This demonstrates the use of **CRUD functionality** and database-driven content.
+
+---
+
+## ℹ️ About Section
+
+The salon's About information can be managed by the administrator.
+
+This allows the business to update information about:
+
+* The salon
+* Its services
+* Its values
+* Its professional approach
+* Other business information
+
+The content is stored in the database rather than being hard-coded into the website.
+
+---
+
+## 📩 Contact / Enquiry System
+
+Visitors can use the contact section to send enquiries to the salon.
+
+The system can capture information such as:
+
+* Name
+* Email address
+* Message
+
+Administrators can access submitted enquiries from the administration area.
+
+---
+
+## 🔐 Administrator Authentication
+
+The application includes an administrator login system.
+
+The administration area is protected so that website management functionality is not publicly accessible.
+
+Authentication allows the application to demonstrate:
+
+* Login functionality
+* Authorization
+* Protected admin pages
+* Session management
+* Logout functionality
+
+---
+
+# 🛠️ Technologies Used
+
+| Technology                     | Purpose                             |
+| ------------------------------ | ----------------------------------- |
+| **C#**                         | Application programming language    |
+| **ASP.NET MVC 5**              | Web application framework           |
+| **.NET Framework 4.7.2 / 4.8** | Application framework               |
+| **Entity Framework 6**         | Database access / ORM               |
+| **SQL Server / LocalDB**       | Database                            |
+| **Razor Views**                | Dynamic HTML rendering              |
+| **HTML5**                      | Website structure                   |
+| **CSS3**                       | Styling and layout                  |
+| **JavaScript**                 | Client-side functionality           |
+| **Bootstrap**                  | Responsive UI                       |
+| **Visual Studio**              | Development environment             |
+| **Git & GitHub**               | Version control and project hosting |
+
+---
+
+# 🏗️ Application Architecture
+
+The application follows the **ASP.NET MVC architecture**.
+
+```text
+SalonWebsite
+│
+├── Controllers
+│   ├── HomeController
+│   ├── AdminController
+│   ├── ServicesController
+│   ├── GalleryController
+│   └── ContactController
+│
+├── Models
+│   ├── Service
+│   ├── Gallery
+│   ├── About
+│   └── Contact
+│
+├── Views
+│   ├── Home
+│   ├── Admin
+│   ├── Services
+│   ├── Gallery
+│   └── Contact
+│
+├── Content
+│   └── CSS / Images
+│
+├── Scripts
+│   └── JavaScript
+│
+├── App_Start
+│   └── Application configuration
+│
+├── App_Data
+│   └── Local database files (if applicable)
+│
+└── Web.config
+```
+
+> The exact folder structure may differ slightly depending on the current version of the project.
+
+---
+
+# 🗄️ Database
+
+The application uses **Entity Framework 6 Code First** for database interaction.
+
+The database context used by the application is:
+
+```text
+SalonDbContext
+```
+
+The database contains the information required to dynamically manage the salon website.
+
+Typical entities include:
+
+```text
+Services
 Gallery
+About
+Contact / Enquiries
+Users / Administration
+```
 
-svg
+Entity Framework is responsible for communicating between the MVC application and the SQL database.
 
-The website can display images to showcase the salon, its environment, and its work.
+---
 
-Gallery functionality provides the salon with a way to visually demonstrate its services to potential customers.
+# 🔄 How the Application Works
 
-About Section
+The basic application flow is:
 
-svg
-
-The website contains information about the salon, allowing visitors to learn more about the business.
-
-The section can include:
-
-Salon description
-Mission/information
-Business information
-Professional presentation
-Contact Information
-
-svg
-
-Customers can access important contact information for the salon.
-
-This can include:
-
-Phone number
-Email address
-Physical location
-Business information
-Social media/contact details
-Administration
-
-svg
-
-The management functionality allows authorized users to manage website information.
-
-Administrators can manage areas such as:
-
-Services
-Website information
-Images
-Contact information
-
-This reduces the need to manually edit website source code whenever salon information changes.
-
-Technologies Used
-
-svg
-
-Frontend
-
-svg
-
-HTML5
-CSS3
-JavaScript
-Bootstrap
-Razor Views
-Backend
-
-svg
-
-C#
-ASP.NET MVC 5
-.NET Framework
-Entity Framework 6
-Database
-
-svg
-
-Microsoft SQL Server
-Entity Framework Code First
-Development Tools
-
-svg
-
-Microsoft Visual Studio
-SQL Server Management Studio (SSMS)
-Git
-GitHub
-Architecture
-
-svg
-
-The application follows the Model-View-Controller (MVC) architectural pattern.
-
-Model
-
-svg
-
-Models represent the application's data and database entities.
-
-Examples include:
-
-Service
-WebsiteSettings
-Other website-related entities
-View
-
-svg
-
-Razor views are responsible for displaying information to the user.
-
-Examples include:
-
-Home page
-Services page
-About page
-Contact page
-Administrative pages
-Controller
-
-svg
-
-Controllers handle application requests and business logic.
-
-They are responsible for:
-
-Receiving requests
-Retrieving data
-Updating database records
-Passing data to views
-Performing CRUD operations
-Database
-
-svg
-
-The application uses Microsoft SQL Server as its database.
-
-Entity Framework 6 is used to communicate between the ASP.NET MVC application and SQL Server.
-
-The project uses the Code First approach, allowing database tables to be generated from the application's models.
-
-Typical data managed by the application includes:
-
-Services
-Website Settings
-Gallery / Images
-Salon Information
-Contact Information
+```text
+                    ┌──────────────────┐
+                    │      Visitor     │
+                    └────────┬─────────┘
+                             │
+                             ▼
+                    ┌──────────────────┐
+                    │  Public Website  │
+                    └────────┬─────────┘
+                             │
+              ┌──────────────┼──────────────┐
+              ▼              ▼              ▼
+           Services        Gallery        Contact
+              │              │              │
+              └──────────────┼──────────────┘
+                             ▼
+                       SQL Database
 
 
-svg
+                    ┌──────────────────┐
+                    │     Admin        │
+                    └────────┬─────────┘
+                             │
+                             ▼
+                       Admin Login
+                             │
+                             ▼
+                    ┌──────────────────┐
+                    │ Admin Dashboard  │
+                    └────────┬─────────┘
+                             │
+              ┌──────────────┼──────────────┐
+              ▼              ▼              ▼
+          Services        Gallery        Content
+          Management      Management      Management
+                             │
+                             ▼
+                       SQL Database
+```
 
-CRUD Operations
+---
 
-svg
+# 📋 CRUD Operations
 
-The project demonstrates complete CRUD functionality.
+A major part of this project is implementing CRUD operations.
 
+CRUD stands for:
+
+* **Create**
+* **Read**
+* **Update**
+* **Delete**
+
+For example, an administrator can manage salon services:
+
+```text
 Create
-
-svg
-
-Administrators can add new services and website information.
+   ↓
+Add new service
 
 Read
-
-svg
-
-Website visitors can view services and salon information.
+   ↓
+View services
 
 Update
-
-svg
-
-Administrators can modify existing records.
+   ↓
+Edit service
 
 Delete
+   ↓
+Remove service
+```
 
-svg
+This demonstrates practical database-driven application development.
 
-Administrators can remove outdated services or information.
+---
 
-Project Structure
+# 🔒 Security
 
-svg
+The application uses authentication and authorization to protect the administration functionality.
 
-A simplified structure of the application is:
+Important security concepts demonstrated include:
 
-SalonWebsite/
-│
-├── App_Start/
-│
-├── Controllers/
-│   ├── HomeController.cs
-│   ├── ServicesController.cs
-│   └── ...
-│
-├── Models/
-│   ├── Service.cs
-│   ├── WebsiteSettings.cs
-│   └── ...
-│
-├── Views/
-│   ├── Home/
-│   ├── Services/
-│   ├── Shared/
-│   └── ...
-│
-├── Content/
-│   ├── CSS/
-│   └── Images/
-│
-├── Scripts/
-│
-├── App_Data/
-│
-├── Web.config
-│
-└── Global.asax
+* Administrator authentication
+* Authorization
+* Protected controller actions
+* Password-based login
+* Anti-forgery protection
+* Server-side validation
+* Model validation
 
+Sensitive configuration information such as production database credentials should **not** be committed to GitHub.
 
-svg
+---
 
-Installation & Setup
+# 📱 Responsive Design
 
-svg
+The website is designed to work across different screen sizes, including:
+
+* Desktop computers
+* Laptops
+* Tablets
+* Mobile devices
+
+Responsive design techniques are used to ensure that the website remains usable on different devices.
+
+---
+
+# 🚀 Getting Started
 
 Follow these steps to run the project locally.
 
-1. Clone the Repository
+## 1. Clone the Repository
 
-svg
+Open a terminal or Git Bash and run:
 
-Clone the repository using Git:
+```bash
+git clone https://github.com/Zingelwayo22/SalonWebsite.git
+```
 
-git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
+Then move into the project directory:
 
-svg
+```bash
+cd SalonWebsite
+```
 
-Or clone it using GitHub Desktop.
+---
 
-Open the Project
+## 2. Open the Project
 
-svg
+Open the solution file:
 
-Open the solution file in:
+```text
+SalonWebsite.sln
+```
 
-Microsoft Visual Studio
+using **Visual Studio**.
 
-The project was developed using ASP.NET MVC 5 and the .NET Framework.
+---
 
-Restore NuGet Packages
-
-svg
-
-Restore the required NuGet packages through Visual Studio.
-
-You can also use:
-
-Update-Package -reinstall
-
-svg
-
-from the Package Manager Console if necessary.
-
-Configure the Database
-
-svg
-
-Update the connection string in:
-
-Web.config
-
-
-svg
-
-Example:
-
-<connectionStrings>
-    <add name="SalonDbContext"
-         connectionString="YOUR_CONNECTION_STRING"
-         providerName="System.Data.SqlClient" />
-</connectionStrings>
-
-svg
-
-Replace the connection string with your local SQL Server configuration.
-
-Create the Database
-
-svg
-
-If Code First Migrations are being used, run:
-
-Update-Database
-
-svg
-
-from the Visual Studio Package Manager Console.
-
-This will create/update the database according to the Entity Framework migrations.
-
-Build the Application
-
-svg
+## 3. Restore NuGet Packages
 
 In Visual Studio:
 
-Build → Build Solution
+```text
+Tools
+    ↓
+NuGet Package Manager
+    ↓
+Package Manager Settings
+```
 
+Restore the required packages if Visual Studio does not restore them automatically.
 
-svg
+---
 
-Make sure the solution builds successfully.
+## 4. Configure the Database
 
-Run the Application
+The application uses Entity Framework 6 and the `SalonDbContext`.
 
-svg
+Check the connection string in:
 
-Press:
-
-Ctrl + F5
-
-
-svg
-
-or select:
-
-IIS Express
-
-
-svg
-
-The application should open in your browser.
-
-Configuration
-
-svg
-
-Before running the application, make sure the following are correctly configured:
-
-SQL Server connection string
-Database name
-Entity Framework configuration
-Required NuGet packages
-Image/file paths where applicable
-
-Sensitive information such as database passwords should not be committed to GitHub.
-
-Security Considerations
-
-svg
-
-The project is designed with basic application security considerations in mind.
-
-Important practices include:
-
-Administrative functionality should be protected from unauthorized access.
-Database credentials should not be stored publicly.
-Connection strings containing passwords should not be committed to the repository.
-User input should be validated.
-Production applications should use HTTPS.
-Authentication and authorization should be configured before deploying the application publicly.
-Responsive Design
-
-svg
-
-The website was designed to provide a usable experience across different screen sizes.
-
-The interface supports:
-
-Desktop computers
-Laptops
-Tablets
-Mobile devices
-
-Bootstrap and responsive CSS techniques are used to help maintain a consistent layout across devices.
-
-Testing
-
-svg
-
-The application was tested during development to verify:
-
-Pages load correctly.
-Services can be displayed.
-Services can be added.
-Existing services can be edited.
-Services can be deleted.
-Database operations work correctly.
-Images display correctly.
-Navigation works between pages.
-The application builds successfully.
-Future Improvements
-
-svg
-
-Possible future improvements include:
-
-Online appointment booking
-Customer accounts
-Staff accounts
-Role-based authorization
-Appointment management
-Email notifications
-SMS appointment reminders
-Online payments
-Customer reviews
-Advanced image gallery management
-Admin dashboard with statistics
-Service availability management
-Deployment to a cloud hosting platform
-Screenshots
-
-svg
-
-Screenshots of the application can be added here.
+```text
+Web.config
+```
 
 Example:
 
-docs/
-├── home-page.png
-├── services-page.png
-├── about-page.png
-├── gallery-page.png
-└── admin-dashboard.png
+```xml
+<connectionStrings>
+    <add name="SalonDbContext"
+         connectionString="Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=SalonWebsiteDB;Integrated Security=True"
+         providerName="System.Data.SqlClient" />
+</connectionStrings>
+```
+
+Your connection string may differ depending on your local SQL Server configuration.
+
+---
+
+## 5. Run Entity Framework Migrations
+
+Open:
+
+```text
+Tools
+    ↓
+NuGet Package Manager
+    ↓
+Package Manager Console
+```
+
+Then run:
+
+```powershell
+Update-Database
+```
+
+This creates or updates the database based on the Entity Framework migrations.
+
+---
+
+## 6. Build the Application
+
+In Visual Studio:
+
+```text
+Build
+    ↓
+Build Solution
+```
+
+or press:
+
+```text
+Ctrl + Shift + B
+```
+
+Make sure the project builds successfully.
+
+---
+
+## 7. Run the Application
+
+Press:
+
+```text
+F5
+```
+
+or:
+
+```text
+Ctrl + F5
+```
+
+Visual Studio will launch the application using IIS Express.
+
+---
+
+# 🔑 Administration
+
+The administrator can access the administration section through:
+
+```text
+/Admin
+```
+
+The exact login route depends on the authentication configuration in the project.
+
+After successful authentication, the administrator can access the dashboard and manage the salon website.
+
+---
 
 
-svg
 
-Then display them in the README:
 
-![Home Page](docs/home-page.png)
+# 🧪 Validation & Error Handling
 
-![Services Page](docs/services-page.png)
+The application uses validation to help ensure that users submit valid information.
 
-![Admin Dashboard](docs/admin-dashboard.png)
+Examples include:
 
-svg
+* Required field validation
+* Email validation
+* Server-side model validation
+* Error messages
+* Database validation
+* Authentication validation
 
-Adding screenshots is highly recommended for your GitHub portfolio, because recruiters can immediately see what you built without having to run the project.
+This helps prevent invalid information from being stored in the database.
 
-What I Learned
+---
 
-svg
+# 🎯 Project Objectives
+
+The main objectives of this project were to:
+
+* Build a real-world web application
+* Apply the MVC design pattern
+* Work with C# and ASP.NET MVC
+* Implement Entity Framework Code First
+* Work with relational databases
+* Implement CRUD functionality
+* Implement authentication and authorization
+* Create responsive web pages
+* Separate application logic using MVC
+* Practice Git and GitHub
+* Develop a portfolio-ready application
+
+---
+
+# 🧠 What I Learned
 
 Through this project, I gained practical experience with:
 
-ASP.NET MVC development
-C# programming
-Entity Framework
-SQL Server database development
-MVC architecture
-CRUD operations
-Razor views
-HTML and CSS
-Bootstrap
-Database migrations
-Debugging ASP.NET applications
-Git and GitHub
-Structuring a real-world web application
+### ASP.NET MVC
 
-I also gained experience troubleshooting issues involving models, views, layouts, database connections, and runtime errors.
+Understanding how:
 
-Developer
+```text
+Model → Controller → View
+```
 
-svg
+works together to create a web application.
 
-Andile Ndlovu
+### Entity Framework
 
-Diploma in Information and Communication Technology Applications Development
+I learned how to:
 
-Skills demonstrated in this project include:
+* Create models
+* Create a database context
+* Use migrations
+* Create database tables
+* Retrieve database records
+* Insert records
+* Update records
+* Delete records
 
+### Authentication
+
+I gained experience implementing:
+
+* User login
+* Administrator access
+* Authorization
+* Logout functionality
+
+### Database Development
+
+The project helped me understand how an application communicates with a SQL database and how database information can be displayed dynamically on a website.
+
+### GitHub
+
+The project also provided practical experience with:
+
+* Git
+* GitHub repositories
+* Commits
+* Branches
+* README documentation
+* Project presentation
+
+---
+
+# 🔮 Future Improvements
+
+Possible future improvements include:
+
+* Online appointment booking
+* Customer registration and accounts
+* Online payments
+* Staff management
+* Appointment management
+* Automated email notifications
+* SMS notifications
+* Customer reviews
+* Service categories
+* Staff profiles
+* Advanced admin dashboard
+* Appointment calendar
+* Reporting and analytics
+* Image upload functionality
+* Cloud deployment
+* Improved role-based authorization
+
+---
+
+# ☁️ Deployment
+
+The application can be deployed to a hosting environment that supports **ASP.NET MVC 5 / .NET Framework**.
+
+Possible deployment options include:
+
+* IIS
+* Azure App Service
+* Windows-based hosting providers
+
+For production deployment, database credentials and other sensitive configuration values should be stored securely and should not be committed to the repository.
+
+---
+
+# 📚 Project Type
+
+**Portfolio Project**
+
+This project was created to demonstrate practical skills in:
+
+```text
 C#
 ASP.NET MVC
-.NET Framework
-Entity Framework
+Entity Framework 6
 SQL Server
 HTML
 CSS
 JavaScript
 Bootstrap
-Git
-GitHub
-Visual Studio
-License
+Authentication
+CRUD
+Database Development
+Git & GitHub
+```
 
-svg
+---
 
-This project was developed for educational, portfolio, and demonstration purposes.
+# 👨‍💻 Developer
 
-🚀 Project Status
+**Andile Ndlovu**
 
-svg
+Diploma in Information and Communication Technology in Applications Development
+Durban University of Technology
 
-Status: Completed / Portfolio Project
+### Skills Demonstrated
+
+* C#
+* ASP.NET MVC
+* Entity Framework
+* SQL Server
+* HTML5
+* CSS3
+* JavaScript
+* Bootstrap
+* Git & GitHub
+* Database Development
+* Web Application Development
+* Authentication & Authorization
+
+---
+
+# 📫 Contact
+
+If you would like to learn more about this project or discuss potential opportunities, feel free to connect with me on LinkedIn.
+
+**GitHub:**
+https://github.com/Zingelwayo22
+
+**LinkedIn:**
+https://www.linkedin.com/in/andile-ndlovu-244359392/
+
+---
+
+# ⭐ Final Note
+
+This project represents my practical experience in developing a database-driven web application using the **ASP.NET MVC framework**.
+
+The goal was not only to create a visually appealing salon website, but also to demonstrate how a real business could manage its website content through an administrative system backed by a relational database.
+
+If you find this project useful or interesting, feel free to explore the repository.
